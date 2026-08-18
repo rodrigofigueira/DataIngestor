@@ -1,0 +1,15 @@
+@DataIngestor.Api_HostAddress = http://localhost:5083
+
+POST {{DataIngestor.Api_HostAddress}}/people/import
+Content-Type: multipart/form-data; boundary=DataIngestorBoundary
+
+--DataIngestorBoundary
+Content-Disposition: form-data; name="file"; filename="people.csv"
+Content-Type: text/csv
+
+cpf,birthDate,zipCode
+12345678901,1985-04-21,01310100
+98765432100,1990-08-15,30140071
+--DataIngestorBoundary--
+
+###
